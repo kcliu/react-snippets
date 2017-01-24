@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@kadira/storybook-deployer": "^1.2.0",
     "postcss-loader": "^1.2.1",
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^3.0.0",
@@ -8,7 +9,10 @@
     "webpack": "2.1.0-beta.25"
   },
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "start": "start-storybook -p 9001 -c .storybook",
+    "webpack": "^2.1.0-beta.25",
+    "build": "build-storybook -c .storybook -o .out",
+    "deploy": "npm run build && storybook-to-ghpages"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.2"
