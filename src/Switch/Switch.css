@@ -1,0 +1,48 @@
+$bgColor: #027cfb;
+$hoverColor: #3297ff;
+$activeColor: #0055ad;
+$ovalColor: #ececec;
+$offColor: transparent;
+$disableColor: #2b437c;
+
+.switch-wrapper {
+  position: relative;
+  width: 42px;
+  height: 21px;
+  border-radius: 100px;
+  background-color: $bgColor;
+  border: solid 1px $ovalColor;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hoverColor;
+  }
+  &.off {
+    background-color: transparent;
+    &:hover {
+      background-color: $hoverColor;
+    }
+  }
+
+  &[disabled] {
+    background-color: transparent;
+    pointer-events: none;
+    opacity: .3;
+  }
+}
+
+.oval {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  top: -1px;
+  background-color: $ovalColor;
+  border-radius: 50%;
+  transition: all .2s ease-in-out;
+  &.off {
+    left: -1px;
+  }
+  &.on {
+    left: calc(100% - 20px);
+  }
+}
